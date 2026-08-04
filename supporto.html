@@ -4,119 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supporto — Levante</title>
-<style>
-  :root {
-    --notte: #10233b;
-    --mare: #1c3d5c;
-    --alba: #e8a33d;
-    --sabbia: #f7f4ee;
-    --testo: #253549;
-    --tenue: #6b7d92;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--sabbia);
-    color: var(--testo);
-    font: 400 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .orizzonte {
-    height: 6px;
-    background: linear-gradient(90deg, var(--notte), var(--mare) 45%, var(--alba));
-  }
-  header {
-    background: var(--notte);
-    color: #fff;
-    padding: 56px 24px 44px;
-  }
-  .wrap { max-width: 680px; margin: 0 auto; }
-  header h1 {
-    margin: 0 0 6px;
-    font-size: 30px;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  header .app {
-    display: inline-block;
-    margin-bottom: 22px;
-    font-size: 13px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--alba);
-    font-weight: 600;
-  }
-  header p { margin: 0; color: #a9bdd4; font-size: 15px; }
-  main { padding: 44px 24px 72px; }
-  h2 {
-    margin: 44px 0 12px;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--notte);
-  }
-  h2:first-child { margin-top: 0; }
-  p { margin: 0 0 16px; }
-  ul { margin: 0 0 16px; padding-left: 22px; }
-  li { margin-bottom: 8px; }
-  a { color: var(--mare); text-underline-offset: 3px; }
-  a:focus-visible { outline: 2px solid var(--alba); outline-offset: 3px; border-radius: 2px; }
-  .contatto {
-    background: #fff;
-    border-left: 3px solid var(--alba);
-    padding: 22px;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 8px;
-  }
-  .contatto p:last-child { margin-bottom: 0; }
-  .mail {
-    display: inline-block;
-    margin-top: 4px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  .faq {
-    background: #fff;
-    border-radius: 10px;
-    padding: 4px 22px;
-    margin-bottom: 12px;
-  }
-  .faq h3 {
-    margin: 20px 0 8px;
-    font-size: 17px;
-    font-weight: 650;
-    color: var(--notte);
-  }
-  .faq p { margin-bottom: 20px; }
-  footer {
-    border-top: 1px solid #e2ddd3;
-    padding: 28px 24px 56px;
-    font-size: 14px;
-    color: var(--tenue);
-  }
-  footer a { color: var(--tenue); }
-  @media (max-width: 520px) {
-    body { font-size: 16px; }
-    header { padding: 40px 20px 32px; }
-    header h1 { font-size: 25px; }
-    main { padding: 32px 20px 56px; }
-  }
-</style>
+<link rel="stylesheet" href="stile.css">
 </head>
 <body>
 
-<div class="orizzonte"></div>
-
-<header>
-  <div class="wrap">
+<header class="vetro wrap">
+  <div>
     <span class="app">Levante</span>
     <h1>Supporto</h1>
     <p>Domande, problemi, idee — scrivi pure.</p>
   </div>
 </header>
 
-<main class="wrap">
+<main class="vetro wrap">
 
   <div class="contatto">
     <p><strong>Scrivi a:</strong></p>
@@ -142,6 +42,9 @@
     <h3>Ho eliminato un viaggio per sbaglio</h3>
     <p>L'eliminazione rimuove anche tappe, checklist e foto collegate, e non è reversibile. Se usi iCloud, la cancellazione si propaga agli altri dispositivi.</p>
 
+    <h3>Perché l'app mi chiede la posizione?</h3>
+    <p>Solo se apri la mappa estesa di una tappa e tocchi il pulsante della posizione, per mostrarti dove sei rispetto ai punti di interesse e per orientare la bussola. Puoi rifiutare il permesso: tutto il resto continua a funzionare. La posizione non viene salvata né inviata da nessuna parte.</p>
+
     <h3>Come segnalo un bug o propongo una funzione</h3>
     <p>Scrivi all'indirizzo qui sopra. Le segnalazioni dettagliate sono le più utili: cosa stavi facendo, cosa ti aspettavi, cosa è successo invece.</p>
   </div>
@@ -151,7 +54,7 @@
 
 </main>
 
-<footer class="wrap">
+<footer class="vetro wrap">
   <p>Levante — <a href="privacy.html">Informativa sulla privacy</a> · Matteo Pittaro</p>
 </footer>
 

@@ -1,0 +1,189 @@
+/*
+   Stile condiviso delle tre pagine di Levante.
+
+   Prima ogni pagina portava il proprio blocco <style>, con la stessa palette
+   ricopiata tre volte: bastava correggere un colore in una sola per farle
+   divergere. Qui sta in un posto solo.
+
+   L'aspetto riprende quello dell'app: superfici di vetro traslucido, angoli da
+   20px, un filo di luce chiara sul bordo e un'ombra morbida. Perché il vetro si
+   veda come tale serve però qualcosa dietro da rifrangere — da sola,
+   `backdrop-filter` su un fondo piatto non produce alcun effetto. Da qui le due
+   macchie di colore sfocate dietro al contenuto.
+*/
+
+:root {
+  /* Stessi blu e turchese delle categorie predefinite dell'app. */
+  --mare: #3073d9;
+  --profondo: #10233b;
+  --alba: #e8a33d;
+  --testo: #1c2b3d;
+  --tenue: #63748a;
+  --fondo: #eef1f6;
+  --vetro: rgba(255, 255, 255, 0.55);
+  --vetro-bordo: rgba(255, 255, 255, 0.6);
+  --raggio: 20px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--fondo);
+  color: var(--testo);
+  font: 400 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Le macchie che danno al vetro qualcosa da rifrangere. `fixed` così restano
+   ferme mentre la pagina scorre, come uno sfondo dietro un pannello. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  z-index: -1;
+  pointer-events: none;
+}
+body::before {
+  width: 460px; height: 460px;
+  top: -140px; left: -120px;
+  background: var(--mare);
+}
+body::after {
+  width: 380px; height: 380px;
+  bottom: -120px; right: -100px;
+  background: var(--alba);
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* La superficie di vetro, unica ricetta per header, card e footer. */
+.vetro {
+  background: var(--vetro);
+  backdrop-filter: blur(24px) saturate(170%);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  border: 1px solid var(--vetro-bordo);
+  border-radius: var(--raggio);
+  box-shadow: 0 8px 28px rgba(16, 35, 59, 0.12);
+}
+
+header {
+  margin: 40px auto 28px;
+  padding: 40px 32px 34px;
+}
+header .app {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mare);
+  font-weight: 700;
+}
+header h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--profondo);
+}
+header p { margin: 0; color: var(--tenue); }
+
+main { margin: 0 auto 40px; padding: 32px; }
+
+h2 {
+  margin: 32px 0 12px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--profondo);
+}
+h2:first-of-type { margin-top: 0; }
+h3 { margin: 22px 0 6px; font-size: 17px; font-weight: 650; color: var(--profondo); }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 8px; }
+
+a { color: var(--mare); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--alba); outline-offset: 3px; border-radius: 4px; }
+
+/* Blocchi in evidenza: il riquadro "In breve" della privacy e quello dei
+   contatti nel supporto. Un secondo strato di vetro sopra il primo diventerebbe
+   opaco, quindi qui si usa il colore d'accento a bassa opacità e non `.vetro`. */
+.rilievo,
+.contatto {
+  margin: 0 0 26px;
+  padding: 20px 22px;
+  border-radius: 16px;
+  border-left: 3px solid var(--mare);
+  background: rgba(48, 115, 217, 0.08);
+}
+.contatto p:last-child { margin-bottom: 0; }
+.mail { font-size: 19px; font-weight: 600; }
+
+.faq h3:first-child { margin-top: 0; }
+
+.link-elenco { list-style: none; margin: 0; padding: 0; }
+.link-elenco li { margin-bottom: 12px; }
+.link-elenco a {
+  display: block;
+  padding: 18px 22px;
+  border-radius: 16px;
+  border-left: 3px solid var(--alba);
+  background: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  color: var(--profondo);
+  font-weight: 650;
+  transition: background 0.2s ease;
+}
+.link-elenco a:hover { background: rgba(255, 255, 255, 0.8); }
+.link-elenco span {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--tenue);
+}
+
+footer {
+  margin: 0 auto 48px;
+  padding: 22px 32px;
+  font-size: 14px;
+  color: var(--tenue);
+}
+footer p { margin: 0; }
+footer a { color: var(--tenue); }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  header { margin-top: 24px; padding: 30px 22px 26px; }
+  header h1 { font-size: 29px; }
+  main { padding: 24px 22px; }
+  .wrap { padding: 0 14px; }
+}
+
+/* Il vetro chiaro su fondo scuro diventa una macchia lattiginosa: al buio
+   servono superfici scure e un bordo appena percettibile. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --testo: #e6ecf5;
+    --tenue: #9fb0c4;
+    --fondo: #0d1725;
+    --profondo: #f2f6fb;
+    --mare: #6ea8ff;
+    --vetro: rgba(28, 43, 64, 0.55);
+    --vetro-bordo: rgba(255, 255, 255, 0.12);
+  }
+  .vetro { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4); }
+  .rilievo,
+  .contatto { background: rgba(110, 168, 255, 0.12); }
+  .link-elenco a { background: rgba(255, 255, 255, 0.06); }
+  .link-elenco a:hover { background: rgba(255, 255, 255, 0.12); }
+}
