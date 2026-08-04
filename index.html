@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Levante</title>
+<style>
+  :root {
+    --notte: #10233b;
+    --mare: #1c3d5c;
+    --alba: #e8a33d;
+    --sabbia: #f7f4ee;
+    --testo: #253549;
+    --tenue: #6b7d92;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--sabbia);
+    color: var(--testo);
+    font: 400 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .orizzonte {
+    height: 6px;
+    background: linear-gradient(90deg, var(--notte), var(--mare) 45%, var(--alba));
+  }
+  header {
+    background: var(--notte);
+    color: #fff;
+    padding: 72px 24px 60px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  header .app {
+    display: inline-block;
+    margin-bottom: 22px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--alba);
+    font-weight: 600;
+  }
+  header h1 {
+    margin: 0 0 12px;
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  header p { margin: 0; color: #a9bdd4; font-size: 17px; }
+  main { padding: 44px 24px 72px; }
+  h2 {
+    margin: 0 0 16px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--notte);
+  }
+  p { margin: 0 0 16px; }
+  a { color: var(--mare); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--alba); outline-offset: 3px; border-radius: 2px; }
+  .link-elenco { list-style: none; margin: 0; padding: 0; }
+  .link-elenco li { margin-bottom: 12px; }
+  .link-elenco a {
+    display: block;
+    background: #fff;
+    border-left: 3px solid var(--alba);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    text-decoration: none;
+    color: var(--notte);
+    font-weight: 600;
+  }
+  .link-elenco a:hover { background: #fffdf8; }
+  .link-elenco span {
+    display: block;
+    margin-top: 4px;
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--tenue);
+  }
+  footer {
+    border-top: 1px solid #e2ddd3;
+    padding: 28px 24px 56px;
+    font-size: 14px;
+    color: var(--tenue);
+  }
+  footer a { color: var(--tenue); }
+  @media (max-width: 520px) {
+    body { font-size: 16px; }
+    header { padding: 52px 20px 44px; }
+    header h1 { font-size: 30px; }
+    main { padding: 32px 20px 56px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="orizzonte"></div>
+
+<header>
+  <div class="wrap">
+    <span class="app">App per iPhone e iPad</span>
+    <h1>Levante</h1>
+    <p>Organizza i tuoi viaggi: tappe, checklist, foto e note, sincronizzati su iCloud.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>Informazioni</h2>
+  <ul class="link-elenco">
+    <li>
+      <a href="privacy.html">Informativa sulla privacy
+        <span>Quali dati tratta l'app e dove restano</span>
+      </a>
+    </li>
+    <li>
+      <a href="supporto.html">Supporto
+        <span>Domande frequenti e come contattarmi</span>
+      </a>
+    </li>
+  </ul>
+
+</main>
+
+<footer class="wrap">
+  <p>Levante — Matteo Pittaro · <a href="mailto:supporto.levante@icloud.com">supporto.levante@icloud.com</a></p>
+</footer>
+
+</body>
+</html>
