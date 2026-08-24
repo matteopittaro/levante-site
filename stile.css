@@ -9,15 +9,11 @@
    dell'app (con le macchie di colore sfocate dietro, necessarie perché
    `backdrop-filter` da solo su un fondo piatto non fa nulla) qui distraeva da
    testi che sono soprattutto legali/di supporto, fatti per essere letti in
-   fretta e con contrasto alto, non ammirati.
-
-   Niente più riquadri bordati neanche per intestazione e contenuto — stesso
-   giorno, stesso verbale ("è affollato"): su un fondo già bianco un bordo
-   bianco sopra non separa nulla, due caselle uguali impilate leggono come
-   disordine. Resta un unico filo chiaro fra intestazione e contenuto, e uno
-   sopra al footer: lo spazio, non il bordo, fa il lavoro di separare. Il
-   colore resta solo dove ha un vero motivo per esserci — il riquadro
-   "In breve", i link della home, i contatti del supporto.
+   fretta e con contrasto alto, non ammirati. Restano i riquadri (bordo,
+   ombra morbida, raggio) — è la superficie a essere opaca invece che
+   traslucida, non la struttura a sparire. Un tentativo di togliere anche i
+   riquadri, lo stesso giorno, è stato scartato ("è brutta"): più spazio fra
+   intestazione e contenuto bastava, non serviva cambiare tutto.
 */
 
 :root {
@@ -46,16 +42,17 @@ body {
 
 .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
 
-/* Niente più riquadro: su una pagina già bianca, un secondo bordo bianco
-   sopra non separa niente — due caselle uguali una sopra l'altra leggono
-   come affollamento, non come struttura. La classe resta sull'HTML (così
-   non serve toccarlo) ma non disegna più nulla: lo spazio fa il lavoro che
-   prima faceva il bordo. */
-.vetro { background: none; border: none; box-shadow: none; }
+/* La superficie delle sezioni: bianca e opaca, non più vetro. */
+.vetro {
+  background: var(--vetro);
+  border: 1px solid var(--vetro-bordo);
+  border-radius: var(--raggio);
+  box-shadow: 0 8px 28px rgba(16, 35, 59, 0.06);
+}
 
 header {
-  margin: 44px auto 8px;
-  padding: 0 32px;
+  margin: 24px auto 40px;
+  padding: 28px 32px 30px;
 }
 header .app {
   display: inline-block;
@@ -77,15 +74,6 @@ header h1 {
 header p { margin: 0; color: var(--tenue); }
 
 main { margin: 0 auto 40px; padding: 32px; }
-main::before {
-  /* Il filo che segna dove finisce l'intestazione e comincia il contenuto —
-     l'unica linea della pagina, al posto di due riquadri bordati. */
-  content: "";
-  display: block;
-  height: 1px;
-  background: var(--vetro-bordo);
-  margin: 0 0 36px;
-}
 
 h2 {
   margin: 32px 0 12px;
@@ -143,8 +131,7 @@ a:focus-visible { outline: 2px solid var(--alba); outline-offset: 3px; border-ra
 
 footer {
   margin: 0 auto 48px;
-  padding: 28px 32px 0;
-  border-top: 1px solid var(--vetro-bordo);
+  padding: 22px 32px;
   font-size: 14px;
   color: var(--tenue);
 }
@@ -153,7 +140,7 @@ footer a { color: var(--tenue); }
 
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  header { margin-top: 28px; padding: 0 22px; }
+  header { margin-top: 24px; padding: 30px 22px 26px; }
   header h1 { font-size: 29px; }
   main { padding: 24px 22px; }
   .wrap { padding: 0 14px; }
