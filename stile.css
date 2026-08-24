@@ -49,8 +49,8 @@ body {
 }
 
 header {
-  margin: 40px auto 28px;
-  padding: 40px 32px 34px;
+  margin: 24px auto 28px;
+  padding: 28px 32px 30px;
 }
 header .app {
   display: inline-block;
@@ -142,23 +142,4 @@ footer a { color: var(--tenue); }
   header h1 { font-size: 29px; }
   main { padding: 24px 22px; }
   .wrap { padding: 0 14px; }
-}
-
-/* Fondo scuro opaco, non più vetro lattiginoso — stessa scelta della pagina
-   chiara: superficie piena, non traslucida. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --testo: #e6ecf5;
-    --tenue: #9fb0c4;
-    --fondo: #0d1725;
-    --profondo: #f2f6fb;
-    --mare: #6ea8ff;
-    --vetro: #16233a;
-    --vetro-bordo: rgba(255, 255, 255, 0.1);
-  }
-  .vetro { box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4); }
-  .rilievo,
-  .contatto { background: rgba(110, 168, 255, 0.12); }
-  .link-elenco a { background: rgba(255, 255, 255, 0.06); }
-  .link-elenco a:hover { background: rgba(255, 255, 255, 0.12); }
 }
