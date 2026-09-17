@@ -145,3 +145,12 @@ footer a { color: var(--tenue); }
   main { padding: 24px 22px; }
   .wrap { padding: 0 14px; }
 }
+
+/* Il selettore di lingua, sotto l'intestazione — 17/09/2026: due parole e non una bandiera, che
+   direbbe il paese invece della lingua (e l'inglese non è di un paese solo). */
+.lingue {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--tenue);
+}
+.lingue strong { color: var(--testo); }
