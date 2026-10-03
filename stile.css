@@ -50,7 +50,9 @@ body {
   box-shadow: 0 8px 28px rgba(16, 35, 59, 0.06);
 }
 
-header {
+/* `header.wrap`, non `header`: le sezioni hanno anche la classe `.wrap`, che come classe pesa
+   più di un elemento e ne azzerava spazi interni e margini verticali (3/10/2026). */
+header.wrap {
   margin: 24px auto 40px;
   padding: 28px 32px 30px;
 }
@@ -73,7 +75,7 @@ header h1 {
 }
 header p { margin: 0; color: var(--tenue); }
 
-main { margin: 0 auto 40px; padding: 32px; }
+main.wrap { margin: 0 auto 40px; padding: 32px; }
 
 h2 {
   margin: 32px 0 12px;
@@ -129,7 +131,7 @@ a:focus-visible { outline: 2px solid var(--alba); outline-offset: 3px; border-ra
   color: var(--tenue);
 }
 
-footer {
+footer.wrap {
   margin: 0 auto 48px;
   padding: 22px 32px;
   font-size: 14px;
@@ -140,9 +142,9 @@ footer a { color: var(--tenue); }
 
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  header { margin-top: 24px; padding: 30px 22px 26px; }
+  header.wrap { margin-top: 24px; padding: 30px 22px 26px; }
   header h1 { font-size: 29px; }
-  main { padding: 24px 22px; }
+  main.wrap { padding: 24px 22px; }
   .wrap { padding: 0 14px; }
 }
 
