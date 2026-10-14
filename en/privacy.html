@@ -45,7 +45,7 @@
   <ul>
     <li><strong>Trips, places, checklists and notes</strong> — saved in the app's local store on the device</li>
     <li><strong>Photos and documents</strong> — saved on the device; any text recognised in an image is extracted on the device itself</li>
-    <li><strong>Coordinates of destinations</strong> — the places you pick when creating a trip or adding a place</li>
+    <li><strong>Coordinates of destinations</strong> — the places you pick when creating a trip or adding a place, including the spot where you are if you choose «Current Location»</li>
     <li><strong>Your name</strong> — the one written in Settings: it lets the other participants recognise you in shared trips, and stays on your device and in your iCloud</li>
     <li><strong>App preferences</strong> — settings saved locally</li>
   </ul>
@@ -69,12 +69,12 @@
   <p>If you delete a trip you own, it disappears for whoever received it too. If instead you leave a trip someone else shared with you, it disappears only from your device: their data stays intact for everyone else.</p>
 
   <h2>External services</h2>
-  <p>Maps, place search and route calculation are Apple's. When you search for a destination, the text you type and the area of the trip you are searching in reach Apple, which handles them under its own <a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy policy</a>. Your name and the contents of your trips are never sent there. The same holds for iCloud, which keeps your synced data without the developer being able to read it.</p>
+  <p>Maps, place search and route calculation are Apple's. When you search for a destination, the text you type and the area of the trip you are searching in reach Apple (during a trip in progress, the area around you; with «Current Location», the spot to be named: see «Device location»), which handles them under its own <a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy policy</a>. Your name and the contents of your trips are never sent there. The same holds for iCloud, which keeps your synced data without the developer being able to read it.</p>
 
   <p>When you tap the navigation button, Levante hands the place to the navigation app you picked in the settings: Apple Maps, Google Maps or Waze. It passes only the coordinates of the destination — to Apple Maps its name as well, which the other two never receive — and from that moment the route is worked out by the other app, under its own policy and with the location permission you granted it. If the app you picked is not installed, the destination opens on the matching website in your browser. Which navigator you prefer stays on your phone: it is sent to no one, the developer included.</p>
 
   <p>To show you the weather forecast for a destination, the app queries the <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> service. The request contains only the coordinates of the place you chose and the dates of the trip.</p>
-  <p>That request contains no name, no email address, no device or session identifier, and nothing else that could lead back to you. The coordinates are those of the place you want to go to, not of the place where you are.</p>
+  <p>That request contains no name, no email address, no device or session identifier, and nothing else that could lead back to you. The coordinates are those of the destination you chose, not of the place where you are while using the app.</p>
   <p>To convert expenses recorded in a currency other than the trip's, the app downloads exchange rates from <a href="https://www.exchangerate-api.com/" rel="noopener">open.er-api.com</a> and, as a fallback, from the <a href="https://www.ecb.europa.eu/" rel="noopener">European Central Bank</a>. It is a read-only request: it asks for the day's list and nothing more.</p>
   <p>Nothing of yours is sent to them: not your expenses, not their amounts, not which currencies you use. The conversion happens on the device, after the list has arrived.</p>
 
@@ -85,7 +85,7 @@
   <p>During a trip in progress, if you have already given permission, opening the search for a place makes the app read your location once to show nearby results first: the area around you, about five kilometres, goes to Apple's search servers together with what you type, and it is not stored. Before and after the trip the search looks at the destination, not at where you are.</p>
   <p>Outside search, your location is requested only when you ask for it: by tapping the location button on a trip's full map, or on the day's map in «Today». It shows where you are in relation to the places and orients the compass. The permission is the «while using the app» kind, you can refuse it, and everything else keeps working.</p>
   <p>In «Today», while you follow your location, the app also tells you how far the place you are heading to still is: time and distance from where you are now. To work them out, your coordinate is sent as the starting point of a route request to Apple's servers, exactly as when you ask for directions in Maps: Apple handles it under its own <a href="https://www.apple.com/legal/privacy/" rel="noopener">privacy policy</a> and uses it only to answer that request. It goes to no one else, it never reaches the developer, it is not stored on the device and it is not synced to iCloud.</p>
-  <p>The figure keeps updating with the screen off too, but only as long as the day's card stays alive on the lock screen: that card is the visible sign that the app is following your location. Swipe the card away, or tap the location button until it turns off, and the reading stops at once. It also stops on its own once you have visited every place of the day.</p>
+  <p>The figure keeps updating with the screen off too, but only as long as the day's card stays alive on the lock screen: that card is the visible sign that the app is following your location. Swipe the card away, or tap the location button until it turns off, and the reading stops at once. It also stops on its own once you have ticked off every stop of the day.</p>
 
   <h2>Camera and photo library</h2>
   <p>The app asks for camera access only when you choose to photograph a ticket or a document, and for photo library access only to save the pictures you take there. Text recognition in images happens entirely on the device: no image is sent anywhere to be analysed.</p>
